@@ -1,7 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center;
+  margin: 10px;
   min-height: 100vh;
-  border: solid green 2px;
+  background-color: #fcf6ff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1280px;
+  border: solid red 2px;
+  place-content: center;
+}
+
+/* Navigation  */
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 1280px;
+}
+
+.logo {
+  color: #b742ff;
+  font-size: 30px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 37.88px;
+}
+
+ul {
+  display: flex;
+  gap: 62px;
+  list-style-type: none;
+  width: 544px;
+  height: 25px;
+}
+li {
+  font-size: 20px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 25.25px;
+  cursor: pointer;
+}
+
+a {
+  color: #8b8a8b;
+  text-decoration: none;
+}
+
+.signIn {
+  color: #b742ff;
+  font-size: 20px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.arrowIcon {
+  margin-left: 10px;
 }
