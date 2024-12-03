@@ -14,7 +14,6 @@ main {
   justify-content: center;
   align-items: center;
   width: 1280px;
-  /* border: solid red 2px; */
   margin-top: 122px;
 }
 
@@ -58,12 +57,22 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #b742ff;
+}
+
 .signIn {
   color: #b742ff;
   font-size: 20px;
   font-family: "Oxygen", sans-serif;
   font-weight: 400;
   font-style: normal;
+  line-height: auto;
+  cursor: pointer;
+}
+
+.signIn:hover {
+  color: #8b8a8b;
 }
 
 .arrowIcon {
@@ -94,12 +103,10 @@ a {
   padding: 5px 20px;
 }
 ::placeholder {
-  color: #b742ff;
+  color: #c3c0c5;
 }
 
 .search-icon {
-  width: 25px;
-  height: 25px;
   margin-left: 17px;
 }
 
@@ -113,37 +120,56 @@ a {
   font-size: 20px;
   font-family: "Oxygen", sans-serif;
   font-weight: 400;
-  font-style: normal;
-  line-height: 25.25px;
+  cursor: pointer;
 }
 
 .search-btn:hover {
-  background-color: #0056b3;
+  background-color: #d8b5e9;
 }
 
 /*option-filed*/
 
 .option-container {
   background-color: #fff;
+  box-shadow: 0px 4px 4px rgba(183.13, 65.87, 255, 0.1);
   width: 740px;
   height: 256px;
   border-radius: 15px;
   margin-top: 20px;
-}
-
-.options-ul {
   display: flex;
   flex-direction: column;
 }
 
-li {
+.options-li {
+  width: 100%;
+  width: 711px;
+  min-height: 51px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+}
+
+.options-text {
   font-size: 20px;
   font-family: "Oxygen", sans-serif;
   font-weight: 400;
   font-style: normal;
-  line-height: 25.25px;
 }
 
-li:hover {
+.options-li:hover {
   background-color: #f7eefc;
+}
+
+.clock-icon {
+  margin-right: 32px;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin-top: 20px;
 }

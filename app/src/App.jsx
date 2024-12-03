@@ -7,9 +7,9 @@ import NavBar from "./components/NavBar";
 function App() {
   return (
     <BrowserRouter>
-    <NavBar />
+      <NavBar />
       <Routes>
-        <Route path="/" element={<Seker/>} />
+        <Route path="/" element={<Seker />} />
       </Routes>
     </BrowserRouter>
   );
