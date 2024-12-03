@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
 
 import searchIcon from "../assets/search.svg";
+import clockIcon from "../assets/clock.svg";
 
 function Seker() {
+  const [search, setSearch] = useState("");
+  const [data, setData] = useState([]);
+  const [filterData, setFilterData] = useState([]);
+  const [selectedImage, setSelectedImage] = useState([]);
+
+  useEffect(() => {
+    Axios.get("https://api.disneyapi.dev/character").then((res) => {
+      setData(res.data.data);
+    });
+  }, []);
+
+  const filterSearch = () => {
+    const results = data
+      .filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
+      .slice(0, 4);
+    setFilterData(results);
+  };
+
+  const handleImageClick = (item) => {
+    setSelectedImage(item);
+  };
+
   return (
     <main>
       <div className="search-container">
@@ -13,18 +37,30 @@ function Seker() {
           className="search-field"
           type="search"
           id="search-field"
-          placeholder="....."
+          placeholder="Search for Disney characters.."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
-        <button className="search-btn" id="search-btn">
+        <button className="search-btn" id="search-btn" onClick={filterSearch}>
           Search
         </button>
       </div>
       <div className="option-container">
-        <ul className="options-ul">
-          <li>Hej</li>
-          <li>Hej</li>
-          <li>Hej</li>
-        </ul>
+        {filterData.map((item, index) => (
+          <ul className="options-ul" key={index}>
+            <li className="options-li" onClick={() => handleImageClick(item)}>
+              <a className="options-text">
+                <img className="clock-icon" src={clockIcon} alt="Clock Icon" />
+                {item.name}
+              </a>
+            </li>
+          </ul>
+        ))}
+      </div>
+      <div className="img-container">
+        {selectedImage && (
+          <img src={selectedImage.imageUrl} alt={selectedImage.name} />
+        )}
       </div>
     </main>
   );
