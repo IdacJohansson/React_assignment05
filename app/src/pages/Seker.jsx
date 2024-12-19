@@ -8,12 +8,18 @@ function Seker() {
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   const [filterData, setFilterData] = useState([]);
-  const [selectedImage, setSelectedImage] = useState([]);
+  const [selectedImage, setSelectedImage] = useState("");
 
   useEffect(() => {
-    Axios.get("https://api.disneyapi.dev/character").then((res) => {
-      setData(res.data.data);
-    });
+    const fetchData = async () => {
+      try {
+        const res = await Axios.get("https://api.disneyapi.dev/character");
+        setData(res.data.data);
+      } catch (error) {
+        console.error("Error while fetching data", error);
+      }
+    };
+    fetchData();
   }, []);
 
   const filterSearch = () => {
@@ -33,6 +39,7 @@ function Seker() {
         <div>
           <img className="search-icon" src={searchIcon} alt="Search Icon" />
         </div>
+        <label for="search"></label>
         <input
           className="search-field"
           type="search"
