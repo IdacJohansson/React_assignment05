@@ -12,8 +12,12 @@ Create a search bar. In this search-bar, the user should be able to search for a
 
  
 
-Bellow is a Figma file with a design that I want you to use. Good luck! 
-
- 
+Bellow is a Figma file with a design.
 
 https://www.figma.com/design/uKbnTsEpsdA7l5F8W0Itei/Search-UI-(Community)?node-id=0-1&t=1XozHTnoaHsoSVw3-1 
+
+***
+
+#### To start:
+- npm i
+- npm run dev
